@@ -4,10 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resultado</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Datos del Usuario</h1>
-    <p id="resultado"></p>
+    <div class="container">
+      <h1>Datos del Usuario</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Cliente</th>
+          </tr>
+        </thead>
+        <tbody id="resultado">
+          <!-- Datos serán insertados aquí por JavaScript -->
+        </tbody>
+      </table>
+    </div>
 
     <script>
       // Obtiene los datos almacenados en el almacenamiento local del navegador
@@ -15,10 +28,22 @@
       const email = localStorage.getItem("email");
       const telefono = localStorage.getItem("telefono");
 
-      // Muestra los datos en la página
-      document.getElementById(
-        "resultado"
-      ).innerText = `Nombre: ${nombre}\nEmail: ${email}\nTelefono: ${telefono}`;
+      // Crea las filas de la tabla con los datos
+      const resultado = document.getElementById("resultado");
+      resultado.innerHTML = `
+            <tr>
+                <td>Nombre</td>
+                <td>${nombre}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>${email}</td>
+            </tr>
+            <tr>
+                <td>telefono</td>
+                <td>${telefono}</td>
+            </tr>
+        `;
     </script>
   </body>
 </html>
