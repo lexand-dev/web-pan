@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultado</title>
+  </head>
+  <body>
+    <h1>Datos del Usuario</h1>
+    <p id="resultado"></p>
+
+    <script>
+      // Obtiene los datos almacenados en el almacenamiento local del navegador
+      const nombre = localStorage.getItem("nombre");
+      const email = localStorage.getItem("email");
+      const telefono = localStorage.getItem("telefono");
+
+      // Muestra los datos en la página
+      document.getElementById(
+        "resultado"
+      ).innerText = `Nombre: ${nombre}\nEmail: ${email}\nTelefono: ${telefono}`;
+    </script>
+  </body>
+</html>
